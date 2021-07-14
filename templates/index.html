@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+<!-- title override -->
+{% block title %}Index's title{% endblock %}
+{% load static %}
+{% block content %}
+<h2>Данные из индекса</h2>
+
+<img src="{% static 'img\1.jpg' %}" height="300">
+{% include 'index_old.html' %}
+{% endblock %}
