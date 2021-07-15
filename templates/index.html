@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
-<!-- title override -->
-{% block title %}Index's title{% endblock %}
 {% load static %}
-{% block content %}
-<h2>Данные из индекса</h2>
 
-<img src="{% static 'img\1.jpg' %}" height="300">
-{% include 'index_old.html' %}
+<!-- content -->
+{% block index %}
+<!-- ==========start========== -->
+
+
+<!-- carousel -->
+{% include 'carousel.html' %}}
+<!-- services -->
+{% include 'services.html' %}
+<!-- price -->
+{% include 'price.html' %}
+<!-- feedback form -->
+{% include 'feedback.html' %}
+
+<!-- ===========end=========== -->
 {% endblock %}
