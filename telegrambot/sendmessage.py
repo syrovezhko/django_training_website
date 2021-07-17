@@ -11,10 +11,13 @@ def sendTelegram(name, phone):
 		api        = 'https://api.telegram.org/bot'
 		method     = api + token + '/sendMessage'
 
+		if chat_id[0] != '-':
+			chat_id = '-' + chat_id
+
 		if text.find('{') and text.find('}') and text.rfind('{') and text.rfind('}'):
-			part_1     = text[0                  : text.find('{')]
-			part_2     = text[text.find('}') + 1 : text.rfind('{')]
-			part_3     = text[text.rfind('}')    : -1]
+			part_1     = text[0                   : text.find('{')]
+			part_2     = text[text.find('}') + 1  : text.rfind('{')]
+			part_3     = text[text.rfind('}') + 1 : ]
 
 			text_slise = part_1 + name + part_2 + phone + part_3
 		else:
