@@ -18,11 +18,15 @@ from django.urls             import path
 from crm                     import views
 from django.conf             import settings
 from django.conf.urls.static import static
+from .settings                import DEBUG
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.first_page),
     path('thaks/', views.thanks_page, name = 'thanks_page')
 ] 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if DEBUG == True:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
